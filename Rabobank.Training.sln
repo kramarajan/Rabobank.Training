@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29613.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rabobank.Training.WebApp", "Rabobank.Training.WebApp\Rabobank.Training.WebApp.csproj", "{A36EFCE2-D68A-4685-8FB3-5481B37E84CB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rabobank.Training.ClassLibrary", "Rabobank.Training.ClassLibrary\Rabobank.Training.ClassLibrary.csproj", "{15C0C855-1137-45AF-B4B2-7D6BC3E84248}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A36EFCE2-D68A-4685-8FB3-5481B37E84CB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A36EFCE2-D68A-4685-8FB3-5481B37E84CB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A36EFCE2-D68A-4685-8FB3-5481B37E84CB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A36EFCE2-D68A-4685-8FB3-5481B37E84CB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{15C0C855-1137-45AF-B4B2-7D6BC3E84248}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{15C0C855-1137-45AF-B4B2-7D6BC3E84248}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{15C0C855-1137-45AF-B4B2-7D6BC3E84248}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{15C0C855-1137-45AF-B4B2-7D6BC3E84248}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A8D052D3-5C36-42A2-A6BF-2F2F066ACBB7}
+	EndGlobalSection
+EndGlobal

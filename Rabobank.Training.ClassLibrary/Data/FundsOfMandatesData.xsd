@@ -1,0 +1,117 @@
+<?xml version="1.0"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:sdm="http://amt.rnss.rabobank.nl/" targetNamespace="http://amt.rnss.rabobank.nl/"  xmlns:b="http://schemas.microsoft.com/BizTalk/2003">
+	<element name="FundsOfMandatesData">
+		<complexType>
+			<sequence>
+				<element ref="sdm:FundsOfMandates" minOccurs="0"/>
+			</sequence>
+		</complexType>
+	</element>
+	<element name="FundsOfMandates">
+    <annotation>
+      <documentation>A collection of FundOfMandates.</documentation>
+    </annotation>
+    <complexType>
+			<sequence>
+				<element ref="sdm:FundOfMandates" maxOccurs="unbounded"/>
+			</sequence>
+		</complexType>
+	</element>
+	<element name="FundOfMandates">
+    <annotation>
+      <documentation>A FundOfMandates object.</documentation>
+    </annotation>
+    <complexType>
+			<sequence>
+				<element ref="sdm:InstrumentCode"/>
+				<element ref="sdm:InstrumentName"/>
+				<element ref="sdm:LiquidityAllocation"/>
+				<element ref="sdm:Mandates" minOccurs="0"/>
+			</sequence>
+		</complexType>
+	</element>
+	<element name="InstrumentCode">
+		<annotation>
+			<documentation>Instrument code (ISIN).</documentation>
+		</annotation>
+		<simpleType>
+			<restriction base="string">
+				<maxLength value="12"/>
+			</restriction>
+		</simpleType>
+	</element>
+	<element name="InstrumentName">
+		<annotation>
+			<documentation>Instrument name.</documentation>
+		</annotation>
+		<simpleType>
+			<restriction base="string">
+				<maxLength value="45"/>
+			</restriction>
+		</simpleType>
+	</element>
+	<element name="LiquidityAllocation">
+		<annotation>
+			<documentation>The percentage Allocated for Liquidity for this particular fund of Mandates.</documentation>
+		</annotation>
+		<simpleType>
+			<restriction base="decimal">
+				<minInclusive value="0"/>
+				<maxInclusive value="100"/>
+			</restriction>
+		</simpleType>
+	</element>
+	<element name="Mandates">
+    <annotation>
+      <documentation>A collection of Mandates.</documentation>
+    </annotation>
+    <complexType>
+			<sequence>
+				<element ref="sdm:Mandate" maxOccurs="unbounded"/>
+			</sequence>
+		</complexType>
+	</element>
+	<element name="Mandate">
+    <annotation>
+      <documentation>A Mandate, which is a fund or fund of Mandates under a fund of Mandates.</documentation>
+    </annotation>
+    <complexType>
+			<sequence>
+				<element ref="sdm:MandateId"/>
+				<element ref="sdm:MandateName"/>
+				<element ref="sdm:Allocation"/>
+			</sequence>
+		</complexType>
+	</element>
+	<element name="MandateId">
+		<annotation>
+			<documentation>Id uniquely identifying the Mandate as part of a fund of Mandates.</documentation>
+		</annotation>
+		<simpleType>
+			<restriction base="string">
+				<maxLength value="15"/>
+			</restriction>
+		</simpleType>
+	</element>
+	<element name="MandateName">
+		<annotation>
+			<documentation>Mandate name.</documentation>
+		</annotation>
+		<simpleType>
+			<restriction base="string">
+				<maxLength value="45"/>
+			</restriction>
+		</simpleType>
+	</element>
+	<element name="Allocation">
+		<annotation>
+			<documentation>The percentage Allocated to this Mandate. All Mandates under a fund of Mandates should equal 100 percent.</documentation>
+		</annotation>
+		<simpleType>
+			<restriction base="decimal">
+				<minInclusive value="0"/>
+				<maxInclusive value="100"/>
+			</restriction>
+		</simpleType>
+	</element>
+</schema>
