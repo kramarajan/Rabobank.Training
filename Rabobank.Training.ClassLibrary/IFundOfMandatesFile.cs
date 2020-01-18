@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Rabobank.Training.ClassLibrary
 {
-    interface IFundOfMandatesFile
+    public interface IFundOfMandatesFile
     {
         List<FundOfMandates> ReadFundOfMandatesFile(string filename);
 
