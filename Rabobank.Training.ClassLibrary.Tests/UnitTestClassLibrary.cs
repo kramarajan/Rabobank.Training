@@ -19,7 +19,10 @@ namespace Rabobank.Training.ClassLibrary.Tests
         [TestMethod]
         public void Test_ReadFundOfMandatesFile_Count()
         {
+            //Arrange
             string filename = Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location) + @"\TestData\FundsOfMandatesData.xml";
+           
+            //Act
             List<FundOfMandates> fundsOfMandatesData = _fundOfMandatesFile.ReadFundOfMandatesFile(filename);
 
             //Assert.AreEqual(3, fundsOfMandatesData.Count);
