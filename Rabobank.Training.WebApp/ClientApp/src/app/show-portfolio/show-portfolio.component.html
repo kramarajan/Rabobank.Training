@@ -4,14 +4,14 @@
 
 <p *ngIf="!portfolio"><em>Loading...</em></p>
 
-<div *ngIf="portfolio" class='table table-striped' aria-labelledby="tableLabel">
-  <div class="row">
+<div *ngIf="portfolio" class="container" aria-labelledby="tableLabel">
+  <div class="row border-hearder">
     <div class="col-md-4">Code</div>
     <div class="col-md-6">Name</div>
     <div class="col-md-2">Value</div>
   </div>
   <div *ngFor="let position of portfolio">
-    <div class="row">
+    <div class="row border-tr">
       <div class="col-md-2">{{ position.code }}</div>
       <div class="col-md-7">{{ position.name }}</div>
       <div class="col-md-1">&nbsp;</div>

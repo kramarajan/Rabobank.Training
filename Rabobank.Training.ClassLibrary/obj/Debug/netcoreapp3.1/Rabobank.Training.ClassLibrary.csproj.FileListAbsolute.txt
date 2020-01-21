@@ -5,4 +5,3 @@ G:\Source\Core\Rabobank.Training\Rabobank.Training.ClassLibrary\obj\Debug\netcor
 G:\Source\Core\Rabobank.Training\Rabobank.Training.ClassLibrary\obj\Debug\netcoreapp3.1\Rabobank.Training.ClassLibrary.AssemblyInfo.cs
 G:\Source\Core\Rabobank.Training\Rabobank.Training.ClassLibrary\obj\Debug\netcoreapp3.1\Rabobank.Training.ClassLibrary.dll
 G:\Source\Core\Rabobank.Training\Rabobank.Training.ClassLibrary\obj\Debug\netcoreapp3.1\Rabobank.Training.ClassLibrary.pdb
-G:\Source\Core\Rabobank.Training\Rabobank.Training.ClassLibrary\obj\Debug\netcoreapp3.1\Rabobank.Training.ClassLibrary.csprojAssemblyReference.cache

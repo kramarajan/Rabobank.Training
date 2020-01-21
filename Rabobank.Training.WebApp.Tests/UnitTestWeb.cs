@@ -6,6 +6,7 @@ using Rabobank.Training.WebApp.Controllers;
 using System.Collections.Generic;
 using NSubstitute;
 using FluentAssertions;
+using Microsoft.Extensions.Configuration;
 
 namespace Rabobank.Training.WebApp.Tests
 {
@@ -18,8 +19,9 @@ namespace Rabobank.Training.WebApp.Tests
             //Arrange
             var logger = Substitute.For<ILogger<PortfolioController>>();
             var fundOfMandatesFile = Substitute.For<IFundOfMandatesFile>();
-
-            string path = @"G:\Source\Core\Rabobank.Training\Rabobank.Training.ClassLibrary\Data\FundsOfMandatesData.xml";
+            var configuration = Substitute.For<IConfiguration>();
+                        
+            string path = configuration["MyConfig:FundsOfMandatesFile"] = "Data\\FundsOfMandatesData.xml";
             var fundList = new List<FundOfMandates>()
             {
               new FundOfMandates(){InstrumentCode="", InstrumentName="", LiquidityAllocation=0, Mandates = new List<Mandate>().ToArray()},
@@ -53,7 +55,7 @@ namespace Rabobank.Training.WebApp.Tests
             });
 
             //Act
-            PortfolioController portfolioController = new PortfolioController(logger, fundOfMandatesFile);
+            PortfolioController portfolioController = new PortfolioController(logger, fundOfMandatesFile,configuration);
             IEnumerable<PositionVM> positionVMList = portfolioController.Get();
             List<PositionVM> positionList = (List<PositionVM>)positionVMList;
 

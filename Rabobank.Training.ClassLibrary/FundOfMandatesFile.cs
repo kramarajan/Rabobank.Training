@@ -10,6 +10,11 @@ namespace Rabobank.Training.ClassLibrary
 {
     public class FundOfMandatesFile : IFundOfMandatesFile
     {
+        /// <summary>
+        /// Read FundOfMandates from xml
+        /// </summary>
+        /// <param name="filename"></param>
+        /// <returns></returns>
         public List<FundOfMandates> ReadFundOfMandatesFile(string filename)
         {
             FundsOfMandatesData fundsOfMandatesData = null;
@@ -22,6 +27,10 @@ namespace Rabobank.Training.ClassLibrary
             return fundsOfMandatesData.FundsOfMandates.ToList();
         }
 
+        /// <summary>
+        /// Get Portfolio
+        /// </summary>
+        /// <returns></returns>
         public PortfolioVM GetPortfolio()
         {
             PortfolioVM portfolioVM = new PortfolioVM();
@@ -36,6 +45,12 @@ namespace Rabobank.Training.ClassLibrary
             return portfolioVM;
         }
 
+        /// <summary>
+        /// Get Calculated Mandates
+        /// </summary>
+        /// <param name="portfolioVM"></param>
+        /// <param name="fundsOfMandates"></param>
+        /// <returns></returns>
         public List<PositionVM> GetCalculatedMandates(PortfolioVM portfolioVM, List<FundOfMandates> fundsOfMandates)
         {
             portfolioVM.Positions.ForEach(position => {
@@ -86,39 +101,4 @@ namespace Rabobank.Training.ClassLibrary
             }
         }
     }
-
-    //public class XMLHelper
-    //{
-    //    public static ObjectType ReadXml<ObjectType>(string fileName)
-    //    {
-    //        using (var sw = new StreamReader(ENV.PathDecoder.DecodePath(fileName)))
-    //        {
-    //            return (ObjectType)new XmlSerializer(typeof(ObjectType)).Deserialize(sw);
-    //        }
-    //    }
-
-    //    public static void SaveXml<ObjectType>(ObjectType o, string fileName)
-    //    {
-    //        using (var sw = new StreamWriter(ENV.PathDecoder.DecodePath(fileName)))
-    //        {
-    //            new XmlSerializer(typeof(ObjectType)).Serialize(sw, o);
-    //        }
-    //    }
-    //    public static ObjectType ReadXmlString<ObjectType>(string xmlString)
-    //    {
-    //        using (var sw = new StringReader(xmlString))
-    //        {
-    //            return (ObjectType)new XmlSerializer(typeof(ObjectType)).Deserialize(sw);
-    //        }
-    //    }
-
-    //    public static string SaveXmlString<ObjectType>(ObjectType o)
-    //    {
-    //        using (var sw = new StringWriter())
-    //        {
-    //            new XmlSerializer(typeof(ObjectType)).Serialize(sw, o);
-    //            return sw.ToString();
-    //        }
-    //    }
-    //}
 }
